@@ -43,17 +43,22 @@ class LoginView extends GetView<LoginController> {
                 hintText: "Password",
                 icon: Icons.lock,
                 isSuffixIcon: true,
-                suffixIcon: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      "Forgot?",
-                      style:
-                          AppFonts.overpass(fontSize: 14, color: Colors.grey),
-                      textAlign: TextAlign.end,
-                    ),
-                  ],
+                suffixIcon: InkWell(
+                  onTap: () {
+                    Get.toNamed(Routes.VERIFY_OTP);
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Forgot?",
+                        style:
+                            AppFonts.overpass(fontSize: 14, color: Colors.grey),
+                        textAlign: TextAlign.end,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
