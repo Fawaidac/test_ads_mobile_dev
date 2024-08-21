@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:test_ads/app/routes/app_pages.dart';
 import 'package:test_ads/core/theme/app_fonts.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -99,10 +100,14 @@ class WelcomeView extends GetView<WelcomeController> {
                                 const BorderSide(color: Colors.grey, width: 1)),
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
                             "assets/images/facebook.png",
-                            height: 30,
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 5,
                           ),
                           Text(
                             "CONTINUE WITH FACEBOOK",
@@ -130,10 +135,14 @@ class WelcomeView extends GetView<WelcomeController> {
                                 const BorderSide(color: Colors.grey, width: 1)),
                       ),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
                             "assets/images/google.png",
-                            height: 30,
+                            height: 25,
+                          ),
+                          const SizedBox(
+                            width: 5,
                           ),
                           Text(
                             "CONTINUE WITH GMAIL",
@@ -145,13 +154,17 @@ class WelcomeView extends GetView<WelcomeController> {
                         ],
                       )),
                 ),
-                Text(
-                  "LOGIN",
-                  style: AppFonts.overpass(
-                      fontSize: 14,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w400),
-                )
+                TextButton(
+                    onPressed: () {
+                      Get.toNamed(Routes.LOGIN);
+                    },
+                    child: Text(
+                      "LOGIN",
+                      style: AppFonts.overpass(
+                          fontSize: 14,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400),
+                    ))
               ],
             ),
           ),
